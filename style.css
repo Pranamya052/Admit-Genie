@@ -1,0 +1,237 @@
+/* --- Variables and Global Styles --- */
+:root {
+    --primary-blue: #007bff; /* Main button/accent color */
+    --secondary-blue: #2c3e50; /* Header and dark text */
+    --accent-green: #37c77f; /* CTA button color */
+    --bg-light: #f4f7f6; /* Light background for features */
+    --text-dark: #333;
+    --border-color: #ddd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* --- 1. Header Styling --- */
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--secondary-blue);
+}
+
+.logo .college-text {
+    font-size: 0.8em;
+    font-weight: normal;
+    color: #888;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-blue);
+}
+
+.cta-button {
+    background-color: var(--primary-blue);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 20px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* --- 2. Hero Section Styling --- */
+.hero-wrapper {
+    background-color: var(--bg-light); /* Light teal background for the whole section */
+    padding: 40px 0;
+    border-radius: 0 0 15px 15px; /* Subtle curved bottom edge */
+    margin-bottom: 40px;
+}
+
+.hero-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px;
+    overflow: hidden; /* Important for containing image corners */
+    min-height: 450px; /* Ensures height on larger screens */
+}
+
+/* Left Image Block */
+.hero-image-block {
+    flex: 1;
+    overflow: hidden;
+}
+
+.hero-image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the space without distortion */
+    display: block;
+}
+
+/* Right Content Block */
+.hero-content-block {
+    flex: 1;
+    background-color: var(--secondary-blue); /* Dark blue background */
+    color: white;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content-block h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #f7f7f7;
+}
+
+.sub-tagline {
+    font-size: 1em;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.main-cta-button {
+    background-color: var(--accent-green); /* Bright green button */
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    max-width: 200px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.main-cta-button:hover {
+    background-color: #2e9f65;
+}
+
+/* --- 3. Features Section Styling --- */
+.features-container {
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.features-container h3 {
+    font-size: 1.8em;
+    color: var(--secondary-blue);
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.feature-item {
+    flex-basis: 30%;
+    padding: 20px;
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 3.5em;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    /* Circular border/box around the icon, as seen in the image */
+    border: 2px solid var(--primary-blue);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.feature-item p {
+    font-size: 1.1em;
+    margin: 10px 0 5px 0;
+    font-weight: 600;
+}
+
+.feature-item .support-text {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: normal;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+        border-radius: 0;
+        box-shadow: none;
+        min-height: auto;
+    }
+    
+    .hero-content-block {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .main-cta-button {
+        margin: 0 auto;
+    }
+
+    .features-grid {
+        flex-direction: column;
+    }
+
+    .feature-item {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    nav ul {
+        display: none; /* Hide navigation links on small screens for simplicity */
+    }
+}
